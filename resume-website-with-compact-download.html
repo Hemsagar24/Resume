@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hemsagar Patel - Software Development Engineer</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-bg: #f8f9fa;
+            --dark-text: #333;
+            --light-text: #fff;
+            --border-radius: 5px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--dark-text);
+            background-color: var(--light-bg);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            margin-bottom: 40px;
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        h2 {
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        a:hover {
+            color: var(--accent-color);
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 50px 0 30px;
+        }
+        
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+        
+        .profile-info h1 {
+            color: var(--light-text);
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .profile-info h2 {
+            color: var(--secondary-color);
+            border: none;
+            font-size: 1.5rem;
+            font-weight: normal;
+            margin-bottom: 15px;
+        }
+        
+        .profile-info h2::after {
+            display: none;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .contact-item i {
+            color: var(--secondary-color);
+        }
+        
+        /* Download Button Styles */
+        .download-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--secondary-color);
+            color: var(--light-text);
+            padding: 6px 12px;
+            border-radius: var(--border-radius);
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.3s;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+        
+        .download-btn:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-1px);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+        }
+        
+        .download-btn i {
+            font-size: 1rem;
+        }
+        
+        /* Main Content Styles */
+        main {
+            padding: 40px 0;
+        }
+        
+        .objective p {
+            font-style: italic;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .tech-category {
+            margin-bottom: 15px;
+        }
+        
+        .tech-category h3 {
+            font-size: 1rem;
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+        
+        .tech-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .tech-item {
+            background-color: var(--light-bg);
+            padding: 5px 10px;
+            border-radius: var(--border-radius);
+            font-size: 0.9rem;
+        }
+        
+        .experience-item, .education-item {
+            margin-bottom: 25px;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 15px;
+        }
+        
+        .experience-header, .education-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .company-name, .institute-name {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .job-title, .degree {
+            font-style: italic;
+            color: var(--secondary-color);
+        }
+        
+        .job-duration, .education-duration {
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        .job-location, .education-location {
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        /* Footer Styles */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        
+        /* PDF Export Styles - These will only affect the PDF version */
+        @media print {
+            body {
+                font-size: 10pt;
+                line-height: 1.4;
+            }
+            
+            section {
+                margin-bottom: 15px;
+                padding: 15px;
+                box-shadow: none;
+                page-break-inside: avoid;
+            }
+            
+            h1 {
+                font-size: 18pt;
+            }
+            
+            h2 {
+                font-size: 14pt;
+                margin-bottom: 8px;
+            }
+            
+            p, li {
+                font-size: 9pt;
+                margin-bottom: 5px;
+            }
+            
+            .download-btn {
+                display: none;
+            }
+            
+            .tech-item {
+                padding: 2px 5px;
+                font-size: 8pt;
+            }
+            
+            .experience-item, .education-item {
+                margin-bottom: 10px;
+            }
+            
+            ul {
+                margin-left: 15px;
+            }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .profile-info {
+                margin-bottom: 20px;
+            }
+            
+            .experience-header, .education-header {
+                flex-direction: column;
+            }
+            
+            .job-duration, .education-duration {
+                margin-top: 5px;
+            }
+            
+            .download-btn {
+                position: relative;
+                top: auto;
+                right: auto;
+                margin-top: 15px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="profile-info">
+                    <h1>Hemsagar Patel</h1>
+                    <h2>Software Development Engineer III</h2>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Bengaluru, Karnataka</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+91 7008 132 194</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:career.hemsagar@gmail.com">career.hemsagar@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-linkedin"></i>
+                            <a href="https://www.linkedin.com/in/hemsagar2411" target="_blank">linkedin.com/in/hemsagar2411</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="download-btn" id="downloadPDF">
+                    <i class="fas fa-download"></i>
+                    PDF
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Professional Summary -->
+        <section class="summary">
+            <h2>Professional Summary</h2>
+            <p>Seasoned Software Engineer with over 6+ years of experience in designing and implementing large-scale applications and backend RESTAPIs. Experienced in leading microservice based cloud-native projects from inception to Production, catering to millions of users. Known for troubleshooting complex issues, optimizing code.</p>
+        </section>
+
+        <!-- Career Objective -->
+        <section class="objective">
+            <h2>Career Objective</h2>
+            <p>Want to contribute to the development of distributed and scalable application serving millions of users globally.</p>
+        </section>
+
+        <!-- Technical Skills -->
+        <section class="skills">
+            <h2>Technical Skills</h2>
+            <div class="tech-stack">
+                <div class="tech-category">
+                    <h3>Development</h3>
+                    <div class="tech-items">
+                        <span class="tech-item">Java8</span>
+                        <span class="tech-item">Spring Boot</span>
+                        <span class="tech-item">Spring Reactive</span>
+                        <span class="tech-item">Kafka</span>
+                        <span class="tech-item">Azure Cosmos</span>
+                        <span class="tech-item">MySQL/MariaDB</span>
+                        <span class="tech-item">Jersey</span>
+                        <span class="tech-item">JPA</span>
+                        <span class="tech-item">Thymeleaf</span>
+                        <span class="tech-item">Git</span>
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h3>Deployment</h3>
+                    <div class="tech-items">
+                        <span class="tech-item">Docker</span>
+                        <span class="tech-item">Kubernetes</span>
+                        <span class="tech-item">Jenkins (CI)</span>
+                        <span class="tech-item">Concord (CD)</span>
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h3>Monitoring</h3>
+                    <div class="tech-items">
+                        <span class="tech-item">Splunk</span>
+                        <span class="tech-item">Kibana</span>
+                        <span class="tech-item">Grafana</span>
+                        <span class="tech-item">New Relic</span>
+                        <span class="tech-item">Azure Portal</span>
+                        <span class="tech-item">Linux</span>
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h3>Architecture</h3>
+                    <div class="tech-items">
+                        <span class="tech-item">Microservice</span>
+                        <span class="tech-item">Monolith</span>
+                        <span class="tech-item">Active-Active</span>
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h3>Cloud</h3>
+                    <div class="tech-items">
+                        <span class="tech-item">Azure</span>
+                        <span class="tech-item">GCP</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Experience -->
+        <section class="experience">
+            <h2>Work Experience</h2>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="company-name">Walmart Global Tech India</div>
+                        <div class="job-title">Software Development Engineer III</div>
+                    </div>
+                    <div>
+                        <div class="job-duration">May 2022 - Present</div>
+                        <div class="job-location">Bengaluru</div>
+                    </div>
+                </div>
+                <ul>
+                    <li>Building a Messaging Platform for Walmart health & wellness clients for sending communication Messages.</li>
+                    <li>Designed & Developed microservice using SpringBoot with Kafka Async mechanism and DLQ data replay technique to achieve resiliency and implemented fault tolerance system with Dual region Active-Active architecture using Azure.</li>
+                    <li>Executed Performance testing and onboarded client with 1000+ TPS requirements, utilising Kafka's topic partitioning strategy & Data Retention capability to achieve high throughput maintaining the SLA of 500ms-1ms for marketing, priority & survey messages.</li>
+                    <li>Implemented Task based approach as part of code refactoring using Command design pattern for code reusability.</li>
+                    <li>Enhanced system efficiency by applying NFRs including circuit breakers, retries & Kafka batch processing. Successfully migrated Kafka clusters with no data loss or Duplication.</li>
+                    <li>Designed & Developed Backend Automated E2E test framework with TestNG for regression.</li>
+                    <li>Build Performance Dashboard on Splunk for E2E analysis of TAT, TPS, DB and Topic Lag, which reduces the effort of manual queries, during performance & automation testing before each PROD deployments.</li>
+                    <li>Worked on various tech mod initiatives for vulnerability fixes, log reduction, Infra optimization to reduce cost incured.</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="company-name">Rakuten India</div>
+                        <div class="job-title">Software Engineer</div>
+                    </div>
+                    <div>
+                        <div class="job-duration">August 2019 - May 2022</div>
+                        <div class="job-location">Bangalore</div>
+                    </div>
+                </div>
+                <ul>
+                    <li>Involved in Backend code migration from PHP to JAVA, developed API Gateway layer for Rakuten Payments business.</li>
+                    <li>Developed the UI interfaces using Thymeleaf to render the HTML pages dynamically as per API response.</li>
+                    <li>Awarded as Employee of the Month for contribution in Rakuten Payments.</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="company-name">Ikyam Solutions Pvt Ltd</div>
+                        <div class="job-title">Associate Software Engineer</div>
+                    </div>
+                    <div>
+                        <div class="job-duration">January 2018 - July 2019</div>
+                        <div class="job-location">Bengaluru</div>
+                    </div>
+                </div>
+                <ul>
+                    <li>Developed ETL data pipelines using Core JAVA scheduled via CRON jobs to collect data from MySQL, MongoDB & Excel Sheets, finally Storing that data to Elastic Search.</li>
+                    <li>Developed REST APIs using Core JAVA & Spring Boot to generate processed JSON data as per the client's Dashboard requirements for only Onionpy Business Intelligence tool.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section class="education">
+            <h2>Education</h2>
+            
+            <div class="education-item">
+                <div class="education-header">
+                    <div>
+                        <div class="institute-name">JSpiders Training & Development Centre</div>
+                        <div class="degree">Java, SQL, Spring Framework</div>
+                    </div>
+                    <div>
+                        <div class="education-duration">February 2017 - August 2017</div>
+                        <div class="education-location">Bangalore Urban, Karnataka, India</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="education-item">
+                <div class="education-header">
+                    <div>
+                        <div class="institute-name">Biju Patnaik University Of Technology</div>
+                        <div class="degree">B.Tech</div>
+                    </div>
+                    <div>
+                        <div class="education-duration">March 2012 - April 2016</div>
+                        <div class="education-location">Odisha, India</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Hemsagar Patel. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- PDF Generation Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+        document.getElementById('downloadPDF').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Clone the body to make modifications for PDF only
+            const element = document.body.cloneNode(true);
+            
+            // Set PDF options with single page optimization
+            const options = {
+                margin: [10, 10, 10, 10], // Top, right, bottom, left margins in mm
+                filename: 'Hemsagar_Patel_Resume.pdf',
+                image: { type: 'jpeg', quality: 0.95 },
+                html2canvas: { scale: 2, letterRendering: true },
+                jsPDF: { 
+                    unit: 'mm', 
+                    format: 'a4', 
+                    orientation: 'portrait',
+                    compress: true
+                },
+                pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+            };
+            
+            // Generate PDF with optimized single-page layout
+            html2pdf().from(document.body).set(options).toPdf().get('pdf').then(function(pdf) {
+                // Ensure content fits on one page
+                pdf.internal.pageSize.height = pdf.internal.pageSize.getHeight();
+                pdf.internal.pageSize.width = pdf.internal.pageSize.getWidth();
+            }).save();
+        });
+    </script>
+</body>
+</html>
